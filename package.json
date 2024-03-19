@@ -1,0 +1,12 @@
+{
+  "name": "k6-qa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server:on": "npx serverest --nodoc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
