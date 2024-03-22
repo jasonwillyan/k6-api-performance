@@ -2,7 +2,6 @@ import http from "k6/http";
 import { check, sleep, fail } from "k6";
 
 export let options = {
-  executor: 'ramping-vus',
   stages: [
     { target: 10, duration: "2s" },
     { target: 10, duration: "5s" },

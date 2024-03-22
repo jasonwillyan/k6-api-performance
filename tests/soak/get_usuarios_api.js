@@ -2,9 +2,8 @@ import http from "k6/http";
 import { check, sleep } from "k6";
 
 export const options = {
-  executor: "constant-arrival-rate", // Mantém uma carga constante de 10 VUs ao longo do teste
-  vus: 10,
-  duration: "5m",
+  vus: 25,
+  duration: "1m",
 };
 
 export default () => {

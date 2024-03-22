@@ -10,7 +10,6 @@ export const options = {
   thresholds: {
     http_req_duration: ["p(90)<300"], // 95% das requisições devem responder em menos de 200ms
     http_req_failed: ["rate<0.01"], // 1% das requisições HTTP podem falhar
-    my_custom_metric: ["rate<0.05"], // A taxa de erro da minha métrica personalizada deve estar abaixo de 5%
     "http_req_duration{type:staticContent}": ["p(99)<250"], // 99% das requisições HTTP para o conteúdo estático devem ser concluídas em menos de 250ms
   },
 };

@@ -2,12 +2,9 @@ import http from "k6/http";
 import { check, sleep } from "k6";
 
 export const options = {
-  executor: 'ramping-arrival-rate',
-  
   stages: [
-    { duration: '10s', target: 20 } // Inicie com 0 VUs e aumente para 20 VUs em 10 segundos
+    { duration: '30s', target: 20 } // Inicie com 0 VUs e aumente para 20 VUs em 10 segundos
   ],
-  duration: "30s",
 };
 
 export default () => {
