@@ -21,25 +21,36 @@ npx serverest@latest
 
 #### Executando Load Tests:
 
-- Run a specific test
+- Executando um teste específico
 
-
+```
 k6 run root/folder/file.spec.js
+```
+
+❗Substitua root/folder/file.spec.js pelo caminho do arquivo de teste que deseja executar.
 
 - Exemplo
 
 ```
-k6 run load/get_usuarios.js
+k6 run load/get_usuarios_api.js
 ```
 
-### Tipos de testes 
+- Executando Todos os Testes de Carga
+
+Você também pode executar todos os testes de carga de uma vez usando o script Bash run_tests.sh. Para isso, siga as instruções abaixo:
+
+1. Navegue até arquivo `run_tests.sh`
+2. Torne o arquivo executável usando o comando `chmod +x run_tests.sh`
+3. Execute o script usando o comando `./run_tests.sh`
+
+### Tipos de testes
 
 #### Teste Soak
 
 Este teste avalia o comportamento do sistema sob carga sustentada por um período prolongado.
 
-- **Usuários Virtuais (VUs)**: 10
-- **Duração do Teste**: 5 minutos
+- **Usuários Virtuais (VUs)**: 25
+- **Duração do Teste**: 1 minuto
 - **Tempo de Resposta Aceitável**: Menos de 500ms
 
 #### Teste Spike
@@ -67,3 +78,11 @@ O teste de stress avalia o comportamento do sistema sob uma carga pesada, simula
 - **Tempo de Resposta Aceitável**: 95% das requisições devem responder em menos de 600ms
 
 ## Resultados
+
+| Tipo de teste | Endpoint     | Checks   | http_req_duration | http_req_failed | iteration | vus/max_vus |
+| ------------- | ------------ | -------- | ----------------- | --------------- | --------- | ----------- |
+| Smoke         | GET usuarios | 100.00%  | 3.54ms            | 0.00%           | 30        | 3/3         |
+| Load          | GET usuarios | 100.00%  | 1.87ms            | 0.00%           | 27        | 7/10        |
+| Stress        | GET usuarios | 100.00%  | 1.73ms            | 0.00%           | 869       | 40/40       |
+| Spike         | GET usuarios | 100.00%  | 1.52ms            | 0.00%           | 307       | 19/20       |
+| Soak          | GET usuarios | 100.00%  | 7.49ms            | 0.00%           | 1500      | 25/25       |
