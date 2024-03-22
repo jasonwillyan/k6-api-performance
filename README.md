@@ -37,7 +37,7 @@ k6 run load/get_usuarios_api.js
 
 - Executando Todos os Testes de Carga
 
-Você também pode executar todos os testes de carga de uma vez usando o script Bash run_tests.sh. Para isso, siga as instruções abaixo:
+Você também pode executar todos os testes de carga de uma vez usando o script Bash `run_tests.sh`. Para isso, siga as instruções abaixo:
 
 1. Navegue até arquivo `run_tests.sh`
 2. Torne o arquivo executável usando o comando `chmod +x run_tests.sh`
